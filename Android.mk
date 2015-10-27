@@ -2,6 +2,10 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
+# Android clang does not support emulate TLS yet.
+# BUG: 25294261
+LOCAL_CLANG := false
+
 LOCAL_SRC_FILES := \
     libcap-ng-0.7/src/cap-ng.c \
     libcap-ng-0.7/src/lookup_table.c
